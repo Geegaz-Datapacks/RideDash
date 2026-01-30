@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "input": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "input": {
+              "right": false
+            }
+          },
+          "vehicle": {
+            "nbt": {"Tags": ["rida.ship.root"]}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "rida:player/input/on_right_released"
+  }
+}

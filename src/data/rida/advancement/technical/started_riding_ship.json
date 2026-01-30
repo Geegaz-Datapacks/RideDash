@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "mount": {
+      "trigger": "started_riding",
+      "conditions": {
+        "player": {
+          "vehicle": {
+            "nbt": {"Tags": ["rida.ship.root"]}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "rida:player/started_riding_ship"
+  }
+}

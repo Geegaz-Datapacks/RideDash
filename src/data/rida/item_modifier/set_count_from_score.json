@@ -1,0 +1,11 @@
+{
+  "function": "set_count",
+  "count": {
+    "type": "score",
+    "score": "rida.var",
+    "target": {
+      "type": "fixed",
+      "name": "#rida.count"
+    }
+  }
+}

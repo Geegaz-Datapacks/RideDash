@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "placed": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:reference",
+            "name": "rida:location/is_custom_block"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "rida:block/_place/start"
+  }
+}

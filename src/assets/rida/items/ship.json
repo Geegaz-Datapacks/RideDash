@@ -1,0 +1,71 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "head",
+        "model": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "rida:ship/seat"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "rida:ship/racer/thruster_red"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "rida:ship/racer/wings_red"
+            },
+            {
+              "type": "minecraft:select",
+              "property": "minecraft:custom_model_data",
+              "index": 0,
+              "cases": [
+                {
+                  "when": "red",
+                  "model": {
+                    "type": "minecraft:model",
+                    "model": "rida:ship/racer/nose_red"
+                  }
+                }
+              ],
+              "fallback": {
+                "type": "minecraft:model",
+                "model": "rida:ship/racer/nose_red"
+              }
+            },
+            {
+              "type": "minecraft:select",
+              "property": "minecraft:custom_model_data",
+              "index": 1,
+              "cases": [
+                {
+                  "when": "red",
+                  "model": {
+                    "type": "minecraft:special",
+                    "base": "rida:ship/banner",
+                    "model": {
+                      "type": "minecraft:banner",
+                      "color": "red"
+                    }
+                  }
+                }
+              ],
+              "fallback": {
+                "type": "minecraft:empty"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "rida:item/ship"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:absorption",
+    "minecraft:instant_damage",
+    "minecraft:instant_health",
+    "minecraft:regeneration",
+    "minecraft:resistance",
+    "minecraft:saturation",
+    "minecraft:strength",
+    "minecraft:weakness",
+    "minecraft:poison",
+    "minecraft:wither"
+  ]
+}

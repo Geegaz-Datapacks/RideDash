@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "lLi",
+    "IBD"
+  ],
+  "key": {
+    "l": "minecraft:lever",
+    "L": "minecraft:leather",
+    "i": "minecraft:iron_ingot",
+    "I": "minecraft:iron_block",
+    "B": "minecraft:blast_furnace",
+    "D": "minecraft:dropper"
+  },
+  "result": {
+    "id": "armor_stand",
+    "components": {
+      "item_model": "rida:ship",
+      "item_name": {
+        "translate": "rida.item.ship",
+        "fallback": "Ship"
+      },
+      "custom_data": {
+        "rida": {
+          "id": "ship"
+        }
+      },
+      "entity_data": {
+        "id": "minecraft:armor_stand",
+        "Marker": true,
+        "Invisible": true,
+        "Tags": [
+          "rida.summon"
+        ]
+      }
+    }
+  }
+}

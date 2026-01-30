@@ -1,0 +1,1 @@
+advancement revoke @s only rida:input/on_right_pressed

@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"particle": "minecraft:block/spruce_planks"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 18, 12]
+		}
+	}
+}
