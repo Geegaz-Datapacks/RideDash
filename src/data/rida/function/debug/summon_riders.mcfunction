@@ -1,0 +1,2 @@
+execute as @e[type=bee,tag=rida.ship] at @s run summon mannequin ~ ~ ~ {Tags:[rida.ship,rida.ship.rider]}
+execute as @e[type=mannequin,tag=rida.ship.rider,predicate=!rida:technical/has_vehicle] at @s run ride @s mount @n[type=bee,tag=rida.ship]

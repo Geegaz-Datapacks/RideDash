@@ -15,7 +15,7 @@ resource_pack:
   min_format: 69
   max_format: 77
 
-output: "build"
+#output: "build"
 
 require:
   - beet.contrib.extra_files

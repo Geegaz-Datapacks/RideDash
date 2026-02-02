@@ -21,6 +21,6 @@
     }
   },
   "rewards": {
-    "function": "rida:player/placed_ship"
+    "function": "rida:entity/player/placed_ship"
   }
 }

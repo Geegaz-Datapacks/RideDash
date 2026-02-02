@@ -12,6 +12,6 @@
     }
   },
   "rewards": {
-    "function": "rida:player/started_riding_ship"
+    "function": "rida:entity/player/started_riding_ship"
   }
 }

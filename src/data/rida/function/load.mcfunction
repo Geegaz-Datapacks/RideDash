@@ -13,17 +13,23 @@ scoreboard objectives add rida.fuel dummy
 scoreboard objectives add rida.stat.speed dummy
 scoreboard objectives add rida.stat.fuel dummy
 
-scoreboard players set #rida.FORWARD_THRUST rida.var 4
-scoreboard players set #rida.BACKWARD_THRUST rida.var -2
-scoreboard players set #rida.BOOST_THRUST rida.var 8
+scoreboard players set #rida.THRUST_SCALE rida.var 10000
+scoreboard players set #rida.FORWARD_THRUST rida.var 80
+scoreboard players set #rida.BACKWARD_THRUST rida.var -40
+scoreboard players set #rida.BOOST_THRUST rida.var 160
 scoreboard players set #rida.BOOST_DURATION rida.var 20
-scoreboard players set #rida.DASH_THRUST rida.var 1500
+scoreboard players set #rida.BOOST_FUEL_USE rida.var 2
+scoreboard players set #rida.DASH_THRUST rida.var 15000
 scoreboard players set #rida.DASH_COOLDOWN rida.var 20
+scoreboard players set #rida.DASH_FUEL_USE rida.var 100
 
-scoreboard players set #rida.PRECISION_SCALE rida.var 1000
+scoreboard players set #rida.FUEL_SCALE rida.var 1200
+scoreboard players set #rida.FUEL_RECHARGES rida.var 3
 
 scoreboard players set #rida.MAX_TILT_ANGLE rida.var 60000
 scoreboard players set #rida.MIN_TILT_ANGLE rida.var -60000
+
+scoreboard players set #rida.MAX_RIDERS rida.var 50
 
 forceload add 0 0 0 0
 # UUID: 9e21e514-e8c0-42d0-9d9c-ce3bc6fbdbe6

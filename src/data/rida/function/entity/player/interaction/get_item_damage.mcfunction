@@ -1,0 +1,2 @@
+execute store result score #rida.damage rida.var run data get entity @s SelectedItem.components."minecraft:damage"
+execute store result score #rida.max_damage rida.var run data get entity @s SelectedItem.components."minecraft:max_damage"

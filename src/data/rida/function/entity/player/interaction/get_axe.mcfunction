@@ -1,6 +1,6 @@
 data modify storage rida:temp item.axe set value {}
-execute store result score #rida.damage rida.var run data get entity @s SelectedItem.components."minecraft:damage"
-execute store result score #rida.max_damage rida.var run data get entity @s SelectedItem.components."minecraft:max_damage"
+
+function rida:entity/player/interaction/get_item_damage
 
 execute unless score #rida.max_damage rida.var matches 1.. if items entity @s weapon.mainhand wooden_axe run return run scoreboard players set #rida.max_damage rida.var 59
 execute unless score #rida.max_damage rida.var matches 1.. if items entity @s weapon.mainhand stone_axe run return run scoreboard players set #rida.max_damage rida.var 131

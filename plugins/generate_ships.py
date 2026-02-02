@@ -130,7 +130,7 @@ def generate_ship_item_model(ctx: Context, ship_types: list):
           "when": color,
           "model": {
             "type": "minecraft:model",
-            "model": f"rida:ship/{ship_type}/{part}_{color}"
+            "model": f"rida:ship/{ship_type}_{part}_{color}"
           }
         }
 
