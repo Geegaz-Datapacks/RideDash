@@ -15,6 +15,7 @@ execute if entity @s[tag=rida.boosting] run function rida:entity/ship/movement/a
 # Only apply movement if there's thrust and fuel
 execute if score @s rida.fuel matches 1.. if score #rida.thrust rida.var = #rida.thrust rida.var at @s run function rida:entity/ship/movement/move
 
+# Display the fuel on the hud using a macro
 scoreboard players operation #rida.fuel rida.var = @s rida.fuel
 scoreboard players operation #rida.fuel rida.var *= #rida.FUEL_BAR_SCALE rida.var
 execute store result storage rida:temp hud.fuel int 1.0 run scoreboard players operation #rida.fuel rida.var /= @s rida.stat.fuel

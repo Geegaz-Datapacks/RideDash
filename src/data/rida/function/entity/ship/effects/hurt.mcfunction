@@ -7,4 +7,4 @@ execute if score @s rida.hurt matches 1 run data modify storage rida:temp displa
 execute unless score @s rida.hurt matches 9 run return fail
 
 playsound entity.blaze.hurt neutral @a[distance=..42]
-particle item{item:{id:"barrier",components:{item_model:"rida:ship"}}} ~ ~0.5 ~ 0.5 0.5 0.5 0.05 20
+particle block{block_state:{Name:"blast_furnace"}} ~ ~0.1 ~ 0.5 0.5 0.5 0.05 20

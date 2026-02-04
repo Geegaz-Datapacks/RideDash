@@ -1,11 +1,11 @@
 # TODO: generate stats based on parts
 data modify storage rida:temp ship set value {stats:{speed:10,health:6,fuel:4},rotation:[0f,0f]}
 
-summon bee ^ ^ ^ {Tags:["rida.ship","rida.ship.root"],NoGravity:1b,Silent:1b,PersistenceRequired:1b,DeathLootTable:"",drop_chances:{head:2f},attributes:[{id:"minecraft:max_health",base:20},{id:"minecraft:movement_speed",base:0},{id:"flying_speed",base:0},{id:"minecraft:scale",base:1.8}],active_effects:[{id:"minecraft:invisibility",amplifier:0,duration:-1,show_particles:0b}],data:{rida:{}},Passengers:[\
+summon cat ^ ^ ^ {Tags:["rida.ship","rida.ship.root"],Silent:1b,PersistenceRequired:1b,DeathLootTable:"",Owner:[I;-1641945836,-390053168,-1650667973,-956572698],drop_chances:{head:2f},attributes:[{id:"minecraft:max_health",base:20},{id:"minecraft:movement_speed",base:0},{id:"minecraft:scale",base:1.8},{id:"minecraft:gravity",base:0.006},{id:"minecraft:step_height",base:1.5}],active_effects:[{id:"minecraft:invisibility",amplifier:0,duration:-1,show_particles:0b},{id:"minecraft:slow_falling",amplifier:1,duration:-1,show_particles:0b}],data:{rida:{}},Passengers:[\
   {id:"minecraft:item_display",Tags:["rida.ship","rida.ship.display","rida.display.model"],shadow_radius:1.5,item_display:"head",teleport_duration:3,interpolation_duration:5,item:{id:"minecraft:black_dye",count:1,components:{"minecraft:item_model":"rida:ship",custom_model_data:{strings:["racer","racer","racer","red","_"]}}}},\
   {id:"minecraft:interaction",Tags:["rida.ship","rida.ship.interaction"],Invulnerable:1b,width:1f,height:1.5f,response:1b}]}
 
-execute as @n[type=bee,tag=rida.ship.root] rotated ~90 0 run function rida:entity/ship/rotate
-execute as @n[type=bee,tag=rida.ship.root] run function rida:entity/ship/apply_stats
+execute as @n[type=cat,tag=rida.ship.root] rotated ~90 0 run function rida:entity/ship/rotate
+execute as @n[type=cat,tag=rida.ship.root] run function rida:entity/ship/apply_stats
 
 kill @s[tag=rida.summon]

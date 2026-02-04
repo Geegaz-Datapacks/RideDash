@@ -1,5 +1,5 @@
 # Safeguard to not have too many riders at the same time
-execute store result score #rida.riders rida.var if entity @e[type=bee,tag=rida.ship,predicate=rida:technical/has_rider]
+execute store result score #rida.riders rida.var if entity @e[type=cat,tag=rida.ship,predicate=rida:technical/has_rider]
 execute if score #rida.riders rida.var >= #rida.MAX_RIDERS rida.var on target run return run title @s actionbar "Too many riders - try again later"
 
 # Don't ride if the player is sneaking
