@@ -5,27 +5,29 @@ author: Geegaz
 version: 0.0.1
 
 data_pack:
-  load: 
+  load:
     - src
   min_format: 88
   max_format: 94
 resource_pack:
-  load: 
+  load:
     - src
   min_format: 69
   max_format: 77
-
-#output: "build"
 
 require:
   - beet.contrib.extra_files
   - beet.contrib.unknown_files
 pipeline:
   - plugins.generate_ships
-meta: 
+  - plugins.package_build
+meta:
   ships_file: src/ships.json
-  extra_files: 
-    data_pack: 
+  extra_files:
+    data_pack:
       - LICENSE_datapack.md
-    resource_pack: 
+    resource_pack:
       - LICENSE_resourcepack.md
+  package_build:
+    directory: "build"
+    zipped: true
