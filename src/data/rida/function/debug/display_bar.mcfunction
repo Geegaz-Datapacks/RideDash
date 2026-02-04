@@ -1,0 +1,1 @@
+title @a actionbar [{text:"\uE000",font:"rida:default",shadow_color:0}]

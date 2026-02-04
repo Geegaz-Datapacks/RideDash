@@ -24,6 +24,7 @@ scoreboard players set #rida.DASH_COOLDOWN rida.var 20
 scoreboard players set #rida.DASH_FUEL_USE rida.var 100
 
 scoreboard players set #rida.FUEL_SCALE rida.var 1200
+scoreboard players set #rida.FUEL_BAR_SCALE rida.var 180
 scoreboard players set #rida.FUEL_RECHARGES rida.var 3
 
 scoreboard players set #rida.MAX_TILT_ANGLE rida.var 60000

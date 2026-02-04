@@ -1,0 +1,1 @@
+$title @s actionbar {translate:"rida.fuel_bar.$(fuel)",font:"rida:default",shadow_color:0}

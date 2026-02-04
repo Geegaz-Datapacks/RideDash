@@ -5,7 +5,7 @@ from typing import Optional
 
 class BuildOptions(PluginOptions):
   directory: Optional[Path] = None
-  zipped: Optional[bool] = False
+  zipped: Optional[bool] = True
   # use_version: Optional[bool] = True
 
 def beet_default(ctx: Context):

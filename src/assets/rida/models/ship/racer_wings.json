@@ -6,7 +6,7 @@
 	"textures": {
 		"0": "rida:ship/racer_base",
 		"1": "rida:ship/racer_color_red",
-		"particle": "rida:item/ship_racer"
+		"particle": "rida:ship/racer_particles"
 	},
 	"elements": [
 		{

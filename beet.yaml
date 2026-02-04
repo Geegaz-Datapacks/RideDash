@@ -9,16 +9,21 @@ data_pack:
     - src
   min_format: 88
   max_format: 94
+  zipped: false
 resource_pack:
   load:
     - src
   min_format: 69
   max_format: 77
+  zipped: false
+
+#output: "build"
 
 require:
   - beet.contrib.extra_files
   - beet.contrib.unknown_files
 pipeline:
+  - plugins.generate_fuel_bar
   - plugins.generate_ships
   - plugins.package_build
 meta:
@@ -30,4 +35,3 @@ meta:
       - LICENSE_resourcepack.md
   package_build:
     directory: "build"
-    zipped: true
