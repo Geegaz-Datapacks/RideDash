@@ -1,0 +1,1 @@
+execute rotated as @s as @e[type=#rida:can_boost,tag=!rida.boost_ring.boosted,distance=..5] unless predicate rida:technical/is_riding_entity run function rida:entity/boost_ring/boost
