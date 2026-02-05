@@ -2,7 +2,7 @@ id: rida
 name: "Ride & Dash: Airbikes"
 author: Geegaz
 # description: 
-version: 0.0.1
+version: dev
 
 data_pack:
   load:
