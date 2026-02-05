@@ -1,7 +1,7 @@
 # Temporary tag to ensure the ship is still alive
 tag @s add rida.alive
 # Necessary to avoid ships attacking players and killing themselves (only if the root is a bee)
-# data remove entity @s[predicate=rida:technical/is_targeting] anger_end_time
+data remove entity @s[predicate=rida:technical/is_targeting] anger_end_time
 
 ## PROCESS:
 # - reset transformation

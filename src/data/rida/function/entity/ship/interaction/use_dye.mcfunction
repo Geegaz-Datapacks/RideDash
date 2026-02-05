@@ -1,4 +1,4 @@
-execute store success score #rida.success rida.var run data modify entity @s data.rida.item.dye set from storage rida:temp item.dye
+execute store success score #rida.success rida.var run data modify entity @s data.rida.dye set from storage rida:temp item.dye
 execute unless score #rida.success rida.var matches 1 run return fail
 
 # Apply dye color to the model
