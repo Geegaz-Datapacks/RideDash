@@ -9,4 +9,5 @@ summon bee ^ ^ ^ {Tags:["rida.ship","rida.ship.root"],Silent:1b,PersistenceRequi
 execute as @n[type=#rida:ship_root,tag=rida.ship.root] rotated ~90 0 run function rida:entity/ship/rotate
 execute as @n[type=#rida:ship_root,tag=rida.ship.root] run function rida:entity/ship/apply_stats
 
-kill @s[tag=rida.summon]
+execute if entity @s[tag=rida.ship] run ride @n[type=#rida:ship_root,tag=rida.ship.root] mount @s
+tag @s remove rida.summon

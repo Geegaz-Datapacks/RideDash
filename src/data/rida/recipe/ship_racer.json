@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "lLi",
+    "lSi",
     "IBD"
   ],
   "key": {
     "l": "minecraft:lever",
-    "L": "minecraft:leather",
+    "S": "minecraft:saddle",
     "i": "minecraft:iron_ingot",
     "I": "minecraft:iron_block",
     "B": "minecraft:blast_furnace",
@@ -27,10 +27,24 @@
       },
       "entity_data": {
         "id": "minecraft:armor_stand",
-        "Marker": true,
+        "Silent": true,
+        "Invulnerable": true,
         "Invisible": true,
+        "Small": true,
         "Tags": [
-          "rida.summon"
+          "rida.summon",
+          "rida.ship",
+          "rida.ship.gravity"
+        ],
+        "attributes": [
+          {
+            "id": "scale",
+            "base": 0
+          },
+          {
+            "id": "gravity",
+            "base": 0.01
+          }
         ]
       }
     }
