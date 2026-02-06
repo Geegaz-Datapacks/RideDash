@@ -1,0 +1,8 @@
+{
+  "env": {
+    "gameVersion": "Latest release",
+    "exclude": [
+      "build/**"
+    ]
+  }
+}

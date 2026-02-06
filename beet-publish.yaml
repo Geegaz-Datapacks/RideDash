@@ -1,0 +1,14 @@
+extend: beet.yaml
+
+version: dev
+
+pipeline:
+  - plugins.package_build
+meta:
+  package_build:
+    directory: "build"
+    separate:
+      package: true
+    combined:
+      package: true
+      zipped: true

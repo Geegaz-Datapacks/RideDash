@@ -1,8 +1,7 @@
 id: rida
 name: "Ride & Dash: Airbikes"
 author: Geegaz
-# description: 
-version: dev
+description: "Ride in style !"
 
 data_pack:
   load:
@@ -17,7 +16,7 @@ resource_pack:
   max_format: 77
   zipped: false
 
-#output: "build"
+output: build
 
 require:
   - beet.contrib.extra_files
@@ -25,7 +24,6 @@ require:
 pipeline:
   - plugins.generate_fuel_bar
   - plugins.generate_ships
-  - plugins.package_build
 meta:
   ships_file: src/ships.json
   extra_files:
@@ -33,5 +31,3 @@ meta:
       - LICENSE_datapack.md
     resource_pack:
       - LICENSE_resourcepack.md
-  package_build:
-    directory: "build"
