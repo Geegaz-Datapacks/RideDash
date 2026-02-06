@@ -1,5 +1,4 @@
 # Ride & Dash: Airbikes
-Speed through the air with these stylish vehicles !
 
 ## Features:
 ### A new kind of flying vehicle: Airbikes

@@ -1,4 +1,6 @@
 # Contributing to Ride & Dash: Airbikes
+Modrinth: https://modrinth.com/project/ride-dash-airbikes<br>
+Smithed: https://smithed.net/packs/rida
 
 ## Contribute translations
 [Google sheets](https://docs.google.com/spreadsheets/d/18Wkkh9j2_-htaP1tnrhu6eCG12DnjkYCFCKtofINQog/edit?usp=sharing)
