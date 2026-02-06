@@ -24,22 +24,20 @@ def beet_default(ctx: Context):
 
 @configurable(validator=BuildOptions)
 def package_build(ctx: Context, opts: BuildOptions):
-  path = opts.directory or ctx.output_directory
-  if path is None:
-    return # Skip if no output path has been provided
+  directory = opts.directory or ctx.output_directory
+  if directory is None:
+    return # Skip if no output directory has been provided
   
-  path /= ctx.project_version
+  package_path = f"{ctx.project_version}/{ctx.project_id}_{ctx.project_version}"
 
   if opts.separate.package:
     # Package the datapack & resourcepack into separate directories/zip files
-    assets_path = path / f"{ctx.project_id}_{ctx.project_version}_resourcepack"
-    data_path = path / f"{ctx.project_id}_{ctx.project_version}_datapack"
     if opts.separate.zipped:
-      ctx.assets.save(path=assets_path.with_suffix(".zip"), zipped=True, overwrite=True)
-      ctx.data.save(path=data_path.with_suffix(".zip"), zipped=True, overwrite=True)
+      ctx.assets.save(path=directory/f"{package_path}_resourcepack.zip", zipped=True, overwrite=True)
+      ctx.data.save(path=directory/f"{package_path}_datapack.zip", zipped=True, overwrite=True)
     else:
-      ctx.assets.save(path=assets_path, overwrite=True)
-      ctx.data.save(path=data_path, overwrite=True)
+      ctx.assets.save(path=directory/f"{package_path}_resourcepack", overwrite=True)
+      ctx.data.save(path=directory/f"{package_path}_datapack", overwrite=True)
   
   if opts.combined.package:
     # Remove duplicate extra files (pack.mcmeta, pack.png...)
@@ -55,11 +53,10 @@ def package_build(ctx: Context, opts: BuildOptions):
         remove_target.pop(extra)
     
     # Package both data & assets into a single directory/zip file
-    combined_path = path / f"{ctx.project_id}_{ctx.project_version}"
     if opts.combined.zipped:
-      with ZipFile(combined_path.with_suffix(".zip"), 'w') as zip:
+      with ZipFile(directory/f"{package_path}.zip", 'w') as zip:
         ctx.assets.dump(zip)
         ctx.data.dump(zip)
     else:
-      ctx.assets.dump(combined_path)
-      ctx.data.dump(combined_path)
+      ctx.assets.dump(directory/package_path)
+      ctx.data.dump(directory/package_path)
