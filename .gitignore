@@ -1,4 +1,4 @@
-# VSCode-specific ignores
+# VSCode
 .vscode
 *.code-workspace
 

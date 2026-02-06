@@ -1,10 +1,12 @@
 # Ride & Dash: Airbikes
 
-## Resources
-- Cloudwolf's custom UI bars: https://www.youtube.com/watch?v=EL2X6ppZSCQ
-- Cloudwolf's vehicles: https://www.youtube.com/watch?v=8cNvXMpD40A
+## Features:
+### A new kind of flying vehicle: Airbikes
+- Use Fire Charges as fuel
+- Can be dyed any of the 16 dye colors
+- Can be decorated with a banner, which can be removed with an axe
 
-# Tools:
-- UUID generator: https://www.soltoder.com/mc-uuid-converter/
+---
 
-**Note on python virtual environments:** created with `py -m venv .venv` (from the VSCode Docs: [Python - Environments](https://code.visualstudio.com/docs/python/environments#_create-a-virtual-environment-in-the-terminal)), the interpreter is selected automatically and terminals created after that use the virtual environment automatically. Once created, it's possible to use `pip` and `beet` commands in the terminal as usual, just remember to run `pip install beet`
+Datapack licenced under MIT - [See full licence](https://github.com/Geegaz-Datapacks/RideDash/blob/main/src/LICENSE_datapack.md)<br>
+Resourcepack licenced under CC BY 4.0 - [See full licence](https://github.com/Geegaz-Datapacks/RideDash/blob/main/src/LICENSE_resourcepack.md)
