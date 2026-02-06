@@ -1,8 +1,9 @@
 # Ride & Dash: Airbikes
+Speed through the air with these stylish vehicles !
 
 ## Features:
 ### A new kind of flying vehicle: Airbikes
-- Use Fire Charges as fuel
+- Use fire charges as fuel
 - Can be dyed any of the 16 dye colors
 - Can be decorated with a banner, which can be removed with an axe
 
