@@ -6,5 +6,7 @@ execute as @a at @s run function rida:entity/player/tick
 # Remove "boosted" tag
 execute as @e[type=#rida:can_boost,tag=rida.boost_ring.boosted] at @s unless entity @e[type=item_display,tag=rida.boost_ring,distance=..5] run tag @s remove rida.boost_ring.boosted
 
-# Reset the motion marker's position
+# Reset the forceloaded marker's position
 tp 9e21e514-e8c0-42d0-9d9c-ce3bc6fbdbe6 0.0 0.0 0.0
+# Reset the forceloaded item display's item
+item replace entity 1af80582-f0f6-4ddd-b1c0-ccaf8beee947 container.0 with air

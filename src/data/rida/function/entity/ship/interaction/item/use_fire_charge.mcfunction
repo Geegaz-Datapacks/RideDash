@@ -8,5 +8,4 @@ scoreboard players reset #rida.fuel
 
 playsound minecraft:item.firecharge.use player @a[distance=..42]
 particle trial_spawner_detection ~ ~1 ~ 0.5 0.1 0.5 0 10
-
-return 1
+return 3

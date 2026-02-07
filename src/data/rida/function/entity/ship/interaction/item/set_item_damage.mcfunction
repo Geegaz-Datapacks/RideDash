@@ -1,0 +1,1 @@
+execute store result entity @s item.components."minecraft:damage" int 1.0 run scoreboard players get #rida.damage rida.var

@@ -27,6 +27,8 @@ scoreboard players set #rida.FUEL_SCALE rida.var 1200
 scoreboard players set #rida.FUEL_BAR_SCALE rida.var 180
 scoreboard players set #rida.FUEL_RECHARGES rida.var 3
 
+scoreboard players set #rida.INGOT_HEALS rida.var 4
+
 scoreboard players set #rida.BOOST_RING_THRUST rida.var 15000
 
 scoreboard players set #rida.MAX_TILT_ANGLE rida.var 60000
