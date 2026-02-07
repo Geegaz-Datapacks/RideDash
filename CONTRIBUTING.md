@@ -20,21 +20,6 @@ Smithed: https://smithed.net/packs/rida
 ### About python virtual environments 
 Created with `py -m venv .venv` (from the VSCode Docs: [Python - Environments](https://code.visualstudio.com/docs/python/environments#_create-a-virtual-environment-in-the-terminal)), the interpreter is selected automatically if you have the Python extension enabled. Creating a new terminal after that will activate the virtual environment, making it possible to use `pip` and `beet` commands in the terminal as usual. Just remember to run `pip install beet` after creating the virtual environment !
 
-## Release steps
-### Version Branch
-1. Create a branch for the version (e.g. `v0.1.2`, `v1.1.0_beta`...) from `dev`
-### Pull Request
-1. Make a pull request to merge the `version` branch into `main`
-2. Test the pull request
-3. Update the pull request (if needed)
-4. Merge the pull request
-### Releases
-6. Create a Github release
-7. Create a Smithed version
-8. Create a Modrinth version
-### Cleanup
-9. Merge `main` branch into `dev`
-
 ## Resources
 - Cloudwolf's custom UI bars: https://www.youtube.com/watch?v=EL2X6ppZSCQ
 - Cloudwolf's vehicles: https://www.youtube.com/watch?v=8cNvXMpD40A
