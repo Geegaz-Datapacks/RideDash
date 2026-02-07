@@ -21,10 +21,17 @@ output: build
 require:
   - beet.contrib.extra_files
   - beet.contrib.unknown_files
+  - plugins.gsheets_translations
 pipeline:
   - plugins.generate_fuel_bar
-  - plugins.generate_ships
+  - plugins.generate_ship_assets
+  - beet.contrib.babelbox
 meta:
+  gsheets_translations:
+    spreadsheet_id: 18Wkkh9j2_-htaP1tnrhu6eCG12DnjkYCFCKtofINQog
+    output: rida.csv
+  babelbox:
+    load: .beet_cache/translations/rida.csv
   ships_file: src/ships.json
   extra_files:
     data_pack:

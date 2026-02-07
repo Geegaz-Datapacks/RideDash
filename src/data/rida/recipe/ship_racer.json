@@ -18,7 +18,7 @@
       "item_model": "rida:ship",
       "item_name": {
         "translate": "rida.item.ship",
-        "fallback": "Ship"
+        "fallback": "Airbike"
       },
       "custom_data": {
         "rida": {
@@ -32,19 +32,7 @@
         "Invisible": true,
         "Small": true,
         "Tags": [
-          "rida.summon",
-          "rida.ship",
-          "rida.ship.gravity"
-        ],
-        "attributes": [
-          {
-            "id": "scale",
-            "base": 0
-          },
-          {
-            "id": "gravity",
-            "base": 0.01
-          }
+          "rida.summon"
         ]
       }
     }
