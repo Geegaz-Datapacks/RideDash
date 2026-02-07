@@ -34,7 +34,8 @@
         "Tags": [
           "rida.summon"
         ]
-      }
+      },
+      "max_stack_size": 1
     }
   }
 }
