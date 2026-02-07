@@ -1,7 +1,7 @@
 id: rida
 name: "Ride & Dash: Airbikes"
 author: Geegaz
-description: "Ride in style !"
+version: dev
 
 data_pack:
   load:
