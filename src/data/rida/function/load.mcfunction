@@ -14,9 +14,9 @@ scoreboard objectives add rida.stat.speed dummy
 scoreboard objectives add rida.stat.fuel dummy
 
 scoreboard players set #rida.THRUST_SCALE rida.var 10000
-scoreboard players set #rida.FORWARD_THRUST rida.var 80
-scoreboard players set #rida.BACKWARD_THRUST rida.var -40
-scoreboard players set #rida.BOOST_THRUST rida.var 150
+scoreboard players set #rida.FORWARD_THRUST rida.var 100
+scoreboard players set #rida.BACKWARD_THRUST rida.var -50
+scoreboard players set #rida.BOOST_THRUST rida.var 200
 scoreboard players set #rida.BOOST_DURATION rida.var 20
 scoreboard players set #rida.BOOST_FUEL_USE rida.var 2
 scoreboard players set #rida.DASH_THRUST rida.var 15000
