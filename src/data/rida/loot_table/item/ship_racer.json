@@ -1,0 +1,41 @@
+{
+  "pools": [
+    {
+      "rolls": 0,
+      "entries": [
+        {
+          "type": "item",
+          "name": "armor_stand",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "item_model": "rida:ship",
+                "item_name": {
+                  "translate": "rida.item.ship",
+                  "fallback": "Airbike"
+                },
+                "custom_data": {
+                  "rida": {
+                    "id": "ship"
+                  }
+                },
+                "entity_data": {
+                  "id": "minecraft:armor_stand",
+                  "Silent": true,
+                  "Invulnerable": true,
+                  "Invisible": true,
+                  "Small": true,
+                  "Tags": [
+                    "rida.summon"
+                  ]
+                },
+                "max_stack_size": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
