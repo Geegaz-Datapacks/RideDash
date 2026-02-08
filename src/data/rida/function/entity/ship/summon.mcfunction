@@ -1,5 +1,5 @@
 # TODO: generate stats based on parts
-data modify storage rida:temp ship set value {stats:{speed:10,health:6,fuel:4}}
+data modify storage rida:temp ship set value {stats:{speed:10,health:5,fuel:4}}
 
 summon cat ^ ^ ^ {Tags:["rida.ship","rida.ship.root"],Silent:1b,PersistenceRequired:1b,Owner:[I;-1641945836,-390053168,-1650667973,-956572698],DeathLootTable:"",drop_chances:{head:2f},\
   attributes:[{id:"max_health",base:20},{id:"armor",base:15},{id:"movement_speed",base:0},{id:"flying_speed",base:0},{id:"minecraft:scale",base:1.8},{id:"step_height",base:1.2},{id:"gravity",base:0.01}],\
