@@ -1,8 +1,9 @@
-# ![Ride & Dash: Airbikes](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/title.png)
+![Ride & Dash: Airbikes](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/title.png)
 
 ## Features:
 **A new kind of flying vehicle: Airbikes**
 - Use fire charges as fuel
+- Fixed with iron ingots
 - Can be dyed any of the 16 dye colors
 - Can be decorated with a banner, which can be removed with an axe
 
