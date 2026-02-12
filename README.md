@@ -1,4 +1,4 @@
-![Ride & Dash: Airbikes](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/title.png)
+![Ride & Dash: Airbikes](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/title.png?raw=true)
 
 ## Features:
 **A new kind of flying vehicle: Airbikes**
@@ -13,7 +13,7 @@
 
 **Recipe** 
 
-![Unlocked by getting a saddle](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/recipe.png)
+![Unlocked by getting a saddle](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/recipe.png?raw=true)
 
 ---
 
