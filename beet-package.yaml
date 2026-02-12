@@ -1,6 +1,6 @@
 extend: beet.yaml
 
-version: 0.1.0_beta
+version: 0.1.0
 
 pipeline:
   - plugins.package_build
