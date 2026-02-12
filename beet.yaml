@@ -1,31 +1,40 @@
 id: rida
 name: "Ride & Dash: Airbikes"
 author: Geegaz
-# description: 
-version: 0.0.1
+version: dev
 
 data_pack:
-  load: 
+  load:
     - src
   min_format: 88
   max_format: 94
+  zipped: false
 resource_pack:
-  load: 
+  load:
     - src
   min_format: 69
   max_format: 77
+  zipped: false
 
-output: "build"
+output: build
 
 require:
   - beet.contrib.extra_files
   - beet.contrib.unknown_files
+  - plugins.gsheets_translations
 pipeline:
-  - plugins.generate_ships
-meta: 
+  - plugins.generate_fuel_bar
+  - plugins.generate_ship_assets
+  - beet.contrib.babelbox
+meta:
+  gsheets_translations:
+    spreadsheet_id: 18Wkkh9j2_-htaP1tnrhu6eCG12DnjkYCFCKtofINQog
+    output: rida.csv
+  babelbox:
+    load: .beet_cache/translations/rida.csv
   ships_file: src/ships.json
-  extra_files: 
-    data_pack: 
+  extra_files:
+    data_pack:
       - LICENSE_datapack.md
-    resource_pack: 
+    resource_pack:
       - LICENSE_resourcepack.md

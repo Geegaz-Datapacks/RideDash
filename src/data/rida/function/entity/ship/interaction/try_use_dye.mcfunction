@@ -1,1 +1,0 @@
-return run data modify entity @s data.rida.item.dye set from storage rida:temp item.dye

@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "lLi",
+    "lSi",
     "IBD"
   ],
   "key": {
     "l": "minecraft:lever",
-    "L": "minecraft:leather",
+    "S": "minecraft:saddle",
     "i": "minecraft:iron_ingot",
     "I": "minecraft:iron_block",
     "B": "minecraft:blast_furnace",
@@ -18,7 +18,7 @@
       "item_model": "rida:ship",
       "item_name": {
         "translate": "rida.item.ship",
-        "fallback": "Ship"
+        "fallback": "Airbike"
       },
       "custom_data": {
         "rida": {
@@ -27,12 +27,15 @@
       },
       "entity_data": {
         "id": "minecraft:armor_stand",
-        "Marker": true,
+        "Silent": true,
+        "Invulnerable": true,
         "Invisible": true,
+        "Small": true,
         "Tags": [
           "rida.summon"
         ]
-      }
+      },
+      "max_stack_size": 1
     }
   }
 }

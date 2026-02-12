@@ -1,7 +1,21 @@
-# Ride & Dash: Airbikes
+![Ride & Dash: Airbikes](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/title.png)
 
-## Resources
-- Cloudwolf's custom UI bars: https://www.youtube.com/watch?v=EL2X6ppZSCQ
-- Cloudwolf's vehicles: https://www.youtube.com/watch?v=8cNvXMpD40A
+## Features:
+**A new kind of flying vehicle: Airbikes**
+- Use fire charges as fuel
+- Fixed with iron ingots
+- Can be dyed any of the 16 dye colors
+- Can be decorated with a banner, which can be removed with an axe
 
-**Note on python virtual environments:** created with `py -m venv .venv` (from the VSCode Docs: [Python - Environments](https://code.visualstudio.com/docs/python/environments#_create-a-virtual-environment-in-the-terminal)), the interpreter is selected automatically and terminals created after that use the virtual environment automatically. Once created, it's possible to use `pip` and `beet` commands in the terminal as usual, just remember to run `pip install beet`
+**Move:** Hold forward / backward (hold both to hover)<br>
+**Boost:** Hold jump (1s duration)<br>
+**Dash:** Press left / right (1s cooldown)
+
+**Recipe** 
+
+![Unlocked by getting a saddle](https://github.com/Geegaz-Datapacks/RideDash/blob/main/img/recipe.png)
+
+---
+
+Datapack licenced under MIT - [See full licence](https://github.com/Geegaz-Datapacks/RideDash/blob/main/src/LICENSE_datapack.md)<br>
+Resourcepack licenced under CC BY 4.0 - [See full licence](https://github.com/Geegaz-Datapacks/RideDash/blob/main/src/LICENSE_resourcepack.md)

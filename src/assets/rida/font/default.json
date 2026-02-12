@@ -1,0 +1,22 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "rida:gui/fuel_bar_empty.png",
+      "ascent": 0,
+      "height": 42,
+      "chars": [
+        "\uE000"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "rida:gui/fuel_bar_filled.png",
+      "ascent": 0,
+      "height": 42,
+      "chars": [
+        "\uE180"
+      ]
+    }
+  ]
+}

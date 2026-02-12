@@ -1,4 +1,4 @@
-# Use the display for ^ ^ ^ positioning
+# Use the display for positioning effects
 execute on passengers if entity @s[type=item_display] at @s run function rida:entity/ship/effects/killed
 execute on passengers run kill @s[tag=rida.ship]
 

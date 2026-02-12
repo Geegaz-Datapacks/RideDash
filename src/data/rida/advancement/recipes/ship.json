@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "saddle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:saddle"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "saddle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rida:ship_racer"
+    ]
+  }
+}

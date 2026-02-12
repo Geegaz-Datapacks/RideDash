@@ -11,6 +11,6 @@
     }
   },
   "rewards": {
-    "function": "rida:player/interacted_ship"
+    "function": "rida:entity/player/interacted_ship"
   }
 }

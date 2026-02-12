@@ -11,6 +11,6 @@
     }
   },
   "rewards": {
-    "function": "rida:player/attacked_ship"
+    "function": "rida:entity/player/attacked_ship"
   }
 }

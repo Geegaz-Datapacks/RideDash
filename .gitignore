@@ -1,9 +1,10 @@
-# VSCode-specific ignores
+# VSCode
 .vscode
 *.code-workspace
 
 # Python
 __pycache__
+.venv
 
 # Folders
 build
