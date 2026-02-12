@@ -1,7 +1,6 @@
 # Get movement & rotation input from the rider
 scoreboard players reset #rida.thrust
 execute on passengers if entity @s[type=player] at @s run function rida:entity/player/input/get_player_input
-execute on passengers if entity @s[type=mannequin] at @s run function rida:debug/get_mannequin_input
 
 # Get the current rotation
 scoreboard players operation #rida.tilt rida.tilt = @s rida.tilt
@@ -13,10 +12,11 @@ execute unless score #rida.tilt rida.tilt = @s rida.tilt run function rida:entit
 # Apply boost (or remove the tag if no fuel or no boost left)
 execute if entity @s[tag=rida.boosting] run function rida:entity/ship/movement/apply_boost_to_thrust
 # Only apply movement if there's thrust and fuel
-execute store success score #rida.move rida.var if score @s rida.fuel matches 1.. if score #rida.thrust rida.var = #rida.thrust rida.var
-execute if score #rida.move rida.var matches 1 if entity @s[tag=!rida.moving] run function rida:entity/ship/movement/start_moving
-execute if score #rida.move rida.var matches 0 if entity @s[tag=rida.moving] run function rida:entity/ship/movement/stop_moving
-execute if entity @s[tag=rida.moving] at @s run function rida:entity/ship/movement/move
+tag @s remove rida.moving.tick
+execute if score @s rida.fuel matches 1.. if score #rida.thrust rida.var = #rida.thrust rida.var run tag @s add rida.moving.tick
+execute if entity @s[tag=!rida.moving,tag=rida.moving.tick] run function rida:entity/ship/movement/start_moving
+execute if entity @s[tag=rida.moving,tag=!rida.moving.tick] run function rida:entity/ship/movement/stop_moving
+execute if entity @s[tag=rida.moving.tick] at @s run function rida:entity/ship/movement/move
 
 # Display the fuel on the hud using a macro
 scoreboard players operation #rida.fuel rida.var = @s rida.fuel
