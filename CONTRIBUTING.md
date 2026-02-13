@@ -2,7 +2,7 @@
 
 ## Links
 Modrinth: https://modrinth.com/project/ride-dash-airbikes<br>
-Smithed: https://smithed.net/packs/rida
+Smithed: https://smithed.net/packs/ride-dash
 
 Github: https://github.com/Geegaz-Datapacks/RideDash<br>
 Trello: https://trello.com/b/6W61QsGv<br>
