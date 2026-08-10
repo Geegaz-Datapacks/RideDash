@@ -15,4 +15,4 @@ attribute @s movement_speed modifier remove rida:boost
 execute if predicate rida:input/is_sprint_pressed run function rida:entity/player/input/on_sprint_pressed
 
 # Rotate the vehicle using the player's look rotation (since this was called with "at @s")
-execute on vehicle if entity @s[tag=rida.moving] run function rida:entity/ship/rotate
+execute on vehicle run function rida:entity/ship/rotate

@@ -1,2 +1,2 @@
 item replace entity @s weapon.mainhand with air
-playsound minecraft:entity.item.break player @a[distance=..42]
+playsound minecraft:entity.item.break player @a[distance=..20]

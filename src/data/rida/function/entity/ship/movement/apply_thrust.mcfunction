@@ -20,9 +20,9 @@ execute store result score #rida.motion rida.dz run data get storage rida:temp m
 scoreboard players operation #rida.thrust rida.dx *= #rida.thrust rida.var
 scoreboard players operation #rida.thrust rida.dy *= #rida.thrust rida.var
 scoreboard players operation #rida.thrust rida.dz *= #rida.thrust rida.var
-scoreboard players operation #rida.thrust rida.dx /= #rida.THRUST_SCALE rida.var
-scoreboard players operation #rida.thrust rida.dy /= #rida.THRUST_SCALE rida.var
-scoreboard players operation #rida.thrust rida.dz /= #rida.THRUST_SCALE rida.var
+scoreboard players operation #rida.thrust rida.dx /= #rida.10000 rida.var
+scoreboard players operation #rida.thrust rida.dy /= #rida.10000 rida.var
+scoreboard players operation #rida.thrust rida.dz /= #rida.10000 rida.var
 
 # Apply the thrust
 scoreboard players operation #rida.motion rida.dx += #rida.thrust rida.dx

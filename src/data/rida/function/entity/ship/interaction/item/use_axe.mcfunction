@@ -1,4 +1,7 @@
+# Skip if there's no banner to remove
 execute unless data entity @s data.rida.banner run return fail
+
+# Get the axe's damage
 execute as 1af80582-f0f6-4ddd-b1c0-ccaf8beee947 run function rida:entity/ship/interaction/item/get_axe
 
 # Drop the banner

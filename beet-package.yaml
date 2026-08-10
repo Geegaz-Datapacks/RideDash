@@ -5,10 +5,6 @@ version: 0.2.0
 pipeline:
   - plugins.package_build
 meta:
-  gsheets_translations:
-    clear_cache: true
-    spreadsheet_id: 18Wkkh9j2_-htaP1tnrhu6eCG12DnjkYCFCKtofINQog
-    output: rida.csv
   package_build:
     directory: "build"
     separate:

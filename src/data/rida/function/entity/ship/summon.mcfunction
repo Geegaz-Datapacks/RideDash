@@ -1,7 +1,7 @@
 # TODO: generate stats based on parts
 # TODO: apply rotation when summoned
-summon cat ~ ~ ~ {Tags:[rida.ship,rida.ship.root,rida.new],variant:"rida:empty",Silent:1b,PersistenceRequired:1b,DeathLootTable:"",Owner:[I;452461954,-252293667,-1312764753,-1947276985],Sitting:1b,\
-  attributes:[{id:"max_health",base:20},{id:"armor",base:20},{id:"movement_speed",base:0},{id:"minecraft:scale",base:1.8},{id:"step_height",base:1.2},{id:"gravity",base:0.015}],\
+summon cat ~ ~ ~ {Tags:[rida.ship,rida.ship.root,rida.new],variant:"rida:empty",Silent:1b,PersistenceRequired:1b,DeathLootTable:"",Sitting:1b,\
+  attributes:[{id:"max_health",base:20},{id:"armor",base:20},{id:"movement_speed",base:0},{id:"minecraft:scale",base:1.8},{id:"step_height",base:1.2},{id:"gravity",base:0.015},{id:"friction_modifier",base:0.0}],\
   data:{rida:{stats:{thrust:8,fuel:5,armor:6}}},\
   Passengers:[\
   {id:"minecraft:interaction",Tags:[rida.ship,rida.ship.interaction],width:1,height:1.5},\

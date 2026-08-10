@@ -4,7 +4,7 @@
 scoreboard objectives add rida.var dummy
 
 # X, Y and Z coordinates for motion calculations
-# Motion values are scaled by #rida.THRUST_SCALE for precision
+# Motion values are scaled by #rida.10000 for precision
 scoreboard objectives add rida.dx dummy
 scoreboard objectives add rida.dy dummy
 scoreboard objectives add rida.dz dummy
@@ -30,8 +30,8 @@ scoreboard objectives add rida.stat.fuel dummy
 
 # CONSTANTS
 
-# Scale used for motion calculations
-scoreboard players set #rida.THRUST_SCALE rida.var 10000
+# Scale used for float operations
+scoreboard players set #rida.10000 rida.var 10000
 
 # Base strength of the forward & backward thrust (before applying rida.stat.thrust)
 scoreboard players set #rida.FORWARD_THRUST rida.var 100
@@ -72,6 +72,8 @@ scoreboard players set #rida.MAX_RIDERS rida.var 50
 # Maximum amount of recording steps (1 step = 1 second)
 scoreboard players set #rida.MAX_RECORDING_STEPS rida.var 600
 
+# LOAD-BEARING ITEM DISPLAY
+# Used to do motion calculations and item manipulation
 # UUID: 1af80582-f0f6-4ddd-b1c0-ccaf8beee947
 summon item_display 0.0 0.0 0.0 {UUID:[I;452461954,-252293667,-1312764753,-1947276985],Tags:[smithed.ignore],view_range:0.0}
 

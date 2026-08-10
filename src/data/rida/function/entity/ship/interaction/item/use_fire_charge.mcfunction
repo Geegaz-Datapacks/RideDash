@@ -1,3 +1,4 @@
+# Skip if the ship is already fully refueled
 execute on vehicle if score @s rida.fuel >= @s rida.stat.fuel run return fail
 execute on vehicle run function rida:entity/ship/refuel
 

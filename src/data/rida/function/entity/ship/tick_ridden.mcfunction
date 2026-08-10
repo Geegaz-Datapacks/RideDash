@@ -11,9 +11,9 @@ execute if entity @s[tag=rida.moving.tick] at @s run function rida:entity/ship/m
 # Get the current rotation
 scoreboard players operation #rida.tilt rida.tilt = @s rida.tilt
 execute store result score @s rida.tilt run data get entity @s Rotation[0] 1000.0
-# Only calculate and apply tilt if the ship is moving and there was a change in rotation
+# Only calculate and apply tilt if there was a change in rotation
 data modify storage rida:temp display.transformation.right_rotation set value [0f,0f,0f,1f]
-execute if entity @s[tag=rida.moving] unless score #rida.tilt rida.tilt = @s rida.tilt run function rida:entity/ship/display/apply_tilt
+execute unless score #rida.tilt rida.tilt = @s rida.tilt run function rida:entity/ship/display/apply_tilt
 
 # Display the fuel on the hud using a macro
 scoreboard players operation #rida.fuel rida.var = @s rida.fuel
