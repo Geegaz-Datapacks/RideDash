@@ -1,0 +1,13 @@
+{
+  "function": "minecraft:set_components",
+  "components": {
+    "lore": [
+      {
+        "text": "Ride & Dash: Airbikes",
+        "font": "rida:tooltip",
+        "color": "white",
+        "italic": false
+      }
+    ]
+  }
+}

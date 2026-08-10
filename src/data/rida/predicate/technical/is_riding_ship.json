@@ -3,7 +3,10 @@
   "entity": "this",
   "predicate": {
     "vehicle": {
-      "nbt": {"Tags": ["rida.ship.root"]}
+      "entity_type": "minecraft:cat",
+      "entity_tags": {
+        "any_of": ["rida.ship"]
+      }
     }
   }
 }

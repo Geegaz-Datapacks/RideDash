@@ -1,1 +1,0 @@
-schedule function rida:second 1s

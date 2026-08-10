@@ -1,4 +1,4 @@
-from beet import Context, Texture, Model, JsonFile
+from beet import Context, Texture, Model, ItemModel, JsonFile
 from beet.core.utils import JsonDict
 
 COLORS: list = [
@@ -20,137 +20,164 @@ COLORS: list = [
   "pink"
 ]
 PARTS: list = [
+  "body",
   "nose",
-  "wings",
   "thruster"
 ]
 
-# Add paletted permutations for every ship type to the blocks atlas. 
-# NOTE: palette_colors is a 4*16 image that gets split by this function 
-# to create 16 palette images, since it's easier to edit a single image.
-def generate_ship_atlas(ctx: Context, ship_types: list):
+
+def generate_atlas(ctx: Context, texture_paths: list):
+  '''
+  Add paletted permutations to the blocks atlas<br><br>
+  **Note:** palette_colors is a 4*16 image that gets split by this function<br> 
+  to create 16 palette images, since it's easier to edit a single image
+  '''
   atlas = ctx.assets.atlases["minecraft:blocks"]
 
   # Split palette_colors using Pillow and remove it from the output pack
-  colors_image = ctx.assets.textures.pop("rida:ship_palette/palette_colors").image
-  for i in range(len(COLORS)):
-    color = COLORS[i]
-    color_image = colors_image.crop((0, i, 4, i+1))
-    ctx.assets.textures[f"rida:ship_palette/{color}"] = Texture(color_image)
+  colors_image = ctx.assets.textures.pop("rida:palette/palette_colors").image
+  for color_index in range(len(COLORS)):
+    color = COLORS[color_index]
+    color_image = colors_image.crop((0, color_index, 4, color_index+1))
+    ctx.assets.textures[f"rida:palette/{color}"] = Texture(color_image)
   
   # Create the paletted permutations based on the list of colors
   atlas_paletted = {
     "type": "paletted_permutations",
-    "palette_key": "rida:ship_palette/palette_key",
+    "palette_key": "rida:palette/palette_key",
     "permutations": {},
     "textures": []
   }
   # Add a permutation for every color
   for color in COLORS:
-    atlas_paletted["permutations"][color] = f"rida:ship_palette/{color}"
-  # Add the "color" texture for every ship type
-  for ship_type in ship_types:
-    atlas_paletted["textures"].append(f"rida:ship/{ship_type}_color")
+    atlas_paletted["permutations"][color] = f"rida:palette/{color}"
+
+  # Add a reference to all textures that should be paletted
+  for path in texture_paths:
+    atlas_paletted["textures"].append(path)
   
   atlas.data["sources"].append(atlas_paletted)
 
-# Replace the colored texture of each part of a ship type by a reference,
-# and create a child model for each color.
-def generate_ship_models(ctx: Context, ship_types: list):
-  for part in PARTS:
-    for ship_type in ship_types:
-      # Modify base models to use a reference instead of a single texture for the color
-      parent_model_path = f"rida:ship/{ship_type}_{part}"
-      parent_model = ctx.assets.models.get(parent_model_path)
-      if parent_model is None:
-        continue # Skip if the model doesn't exist (yet)
-      parent_model.data["textures"]["1"] = f"#color"
-      
-      # Create child models that use the different colored textures
-      for color in COLORS:
-        child_model_path = f"{parent_model_path}_{color}"
-        child_model_data = {
-          "parent": parent_model_path,
-          "textures": {
-            "color": f"rida:ship/{ship_type}_color_{color}"
-          }
+
+def generate_models(ctx: Context, model_path: str, texture_path: str, target_texture: str = "layer0"):
+  '''
+  Replace the `target_texture` of the source model at `model_path` by a reference<br>
+  and create a child model for every color with the base `texture_path`
+  '''
+  parent_model = ctx.assets.models.get(model_path)
+  if not parent_model:
+    print("Model doesn't exist")
+    return # Skip model if it doesn't exist
+  
+  parent_model.data["textures"][target_texture] = f"#color"
+
+  for color in COLORS:
+    child_model_path = f"{model_path}_{color}"
+    child_model_data = {
+      "parent": model_path,
+      "textures": {
+        "color": f"{texture_path}_{color}"
+      }
+    }
+    ctx.assets.models[child_model_path] = Model(child_model_data)
+
+
+def generate_paletted_item_model(ctx: Context, item_path: str, model_path:str, index: int = 0):
+  '''
+  Create the item model and add a select case for each color
+  '''
+  # Dye color
+  select_cases: list = []
+  for color in COLORS:
+    select_cases.append({
+      "when": f"minecraft:{color}_dye",
+      "model": {
+        "type": "minecraft:model",
+        "model": f"{model_path}_{color}"
+      }
+    })
+
+  ctx.assets.item_models[item_path] = ItemModel({
+      "model": {
+        "type": "select",
+        "property": "custom_model_data",
+        "index": index,
+        "cases": select_cases,
+        "fallback": {
+          "type": "empty"
         }
-        ctx.assets.models[child_model_path] = Model(child_model_data)
+      }
+    })
 
-# Create composite model sections in the ship's item model definition.
-# Part > Type (select) > Color (select)
-# 
-# Part:   Nose | Wings | Thruster   All     Banner
-# Index:  0    | 1     | 2          3       4
-# Format: type | type  | type       color   color_banner
-#
-# Example: ["racer","trainer","ghastling","red","yellow","white","red_banner"]
-def generate_ship_item_model(ctx: Context, ship_types: list):
-  ship = ctx.assets.item_models["rida:ship"]
-  ship_composite: list = ship.data["model"]["cases"][0]["model"]["models"]
-  ship_composite.clear()
 
+def generate_ship_item_model(ctx: Context, ships: JsonDict):
+  '''
+  Create the ship model using a composite of all the parts
+  
+  Part   | Nose | Body | Thruster | All | Banner
+  -------|------|------|----------|-----|--------
+  Index  | 0    | 1    | 2        | 3   | 4
+  Format |`name`|`name`| `name`   |`id` |`id`
+  
+  Example: `["racer","rustbucket","brilliant","minecraft:red_dye","minecraft:red_banner"]`
+  '''
+  ship_composite: list = []
+
+  # The seat is always the same - add it first to the composite
   ship_composite.append({
     "type": "minecraft:model",
     "model": "rida:ship/seat"
   })
   
-  type_index = 0
-  for part in PARTS:
-    part_section = {
+  # Nested "select" are structured this way:
+  # part (3)
+  # └ ship (?)
+  #   └ color (16)
+  # Transformation is set on the part's parent model display, to apply it to all of its models
+  
+  # Parts
+  for part_index in range(len(PARTS)):
+    part = PARTS[part_index]
+    # Ships
+    ship_sections: list = []
+    for ship in ships:
+      # Colors
+      color_sections: list = []
+      for color in COLORS:
+        color_sections.append({
+          "when": f"minecraft:{color}_dye",
+          "model": {
+            "type": "minecraft:model",
+            "model": f"rida:ship/{ship}_{part}_{color}"
+          }
+        })
+      ship_sections.append({
+        "when": ship,
+        "model": {
+          "type": "minecraft:select",
+          "property": "minecraft:custom_model_data",
+          "index": 3,
+          "cases": color_sections,
+          "fallback": {
+            "type": "minecraft:empty"
+          }
+        }
+      })
+    ship_composite.append({
       "type": "minecraft:select",
       "property": "minecraft:custom_model_data",
-      "index": type_index,
-      "cases": [],
+      "index": part_index,
+      "cases": ship_sections,
       "fallback": {
         "type": "minecraft:empty"
       }
-    }
-    type_index += 1
-
-    # NOTE: for now, use a single color for the whole ship
-    #color_index = 3
-    for ship_type in ship_types:
-      type_section = {
-          "when": ship_type,
-          "model": {
-            "type": "minecraft:select",
-            "property": "minecraft:custom_model_data",
-            "index": 3,
-            "cases": [],
-            "fallback": {
-              "type": "minecraft:empty"
-            }
-          }
-        }
-      #color_index += 1
-
-      for color in COLORS:
-        color_section = {
-          "when": color,
-          "model": {
-            "type": "minecraft:model",
-            "model": f"rida:ship/{ship_type}_{part}_{color}"
-          }
-        }
-
-        type_section["model"]["cases"].append(color_section)
-      part_section["cases"].append(type_section)
-    ship_composite.append(part_section)
+    })
 
   # Add banner colors to the composite model sections
-  banner_section = {
-    "type": "minecraft:select",
-    "property": "minecraft:custom_model_data",
-    "index": 4,
-    "cases": [],
-    "fallback": {
-      "type": "minecraft:empty"
-    }
-  }
+  banner_color_sections = []
   for color in COLORS:
-    banner_color_section = {
-      "when": f"{color}_banner",
+    banner_color_sections.append({
+      "when": f"minecraft:{color}_banner",
       "model": {
         "type": "minecraft:special",
         "base": "rida:ship/banner",
@@ -159,10 +186,23 @@ def generate_ship_item_model(ctx: Context, ship_types: list):
           "color": color
         }
       }
+    })
+  ship_composite.append({
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "index": 4,
+    "cases": banner_color_sections,
+    "fallback": {
+      "type": "minecraft:empty"
     }
+  })
 
-    banner_section["cases"].append(banner_color_section)
-  ship_composite.append(banner_section)
+  ctx.assets.item_models["rida:ship"] = ItemModel({
+    "model": {
+      "type": "composite",
+      "models": ship_composite
+    }
+  })
 
 
 def beet_default(ctx: Context):
@@ -172,8 +212,15 @@ def beet_default(ctx: Context):
 
   ships_file = JsonFile(source_path=ships_file_path)
   ships: JsonDict = ships_file.data
-  ship_types: list = list(ships.keys())
-  
-  generate_ship_atlas(ctx, ship_types)
-  generate_ship_models(ctx, ship_types)
-  generate_ship_item_model(ctx, ship_types)
+
+  # Doesn't matter in which order we generate assets since
+  # references are resolved when loading the pack ingame
+  texture_paths: list = []
+  for ship in ships:
+    texture = f"rida:ship/{ship}_color"
+    texture_paths.append(texture)
+    for part in PARTS:
+      model = f"rida:ship/{ship}_{part}"
+      generate_models(ctx, model, texture, "1")
+  generate_ship_item_model(ctx, ships)
+  generate_atlas(ctx, texture_paths)

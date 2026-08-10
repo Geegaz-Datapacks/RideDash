@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "rida:item/ship_racer",
-    "particle": "rida:item/ship_racer"
-  }
-}

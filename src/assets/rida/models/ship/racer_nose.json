@@ -6,7 +6,7 @@
 	"textures": {
 		"0": "rida:ship/racer_base",
 		"1": "rida:ship/racer_color",
-		"particle": "rida:ship/racer_particles"
+		"particle": "rida:ship/particles"
 	},
 	"elements": [
 		{
@@ -166,12 +166,14 @@
 		{
 			"name": "Plates",
 			"origin": [8, 13, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [0, 1, 2, 3, 4, 5]
 		},
 		{
 			"name": "Front",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [6, 7, 8, 9, 10, 11, 12]
 		}

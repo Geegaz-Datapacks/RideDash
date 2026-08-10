@@ -1,0 +1,54 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "armor_stand",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "item_model": "rida:icon",
+                "item_name": {
+                  "translate": "item.rida.ship",
+                  "fallback": "Airbike"
+                },
+                "lore": [
+                  {
+                    "translate": "lore.rida.temporary",
+                    "fallback": "This item is temporary and will be\nreplaced in a future update",
+                    "color": "dark_gray"
+                  },
+                  {
+                    "text": "Ride & Dash: Airbikes",
+                    "font": "rida:tooltip",
+                    "color": "white",
+                    "italic": false
+                  }
+                ],
+                "custom_data": {
+                  "rida": {
+                    "id": "ship"
+                  }
+                },
+                "entity_data": {
+                  "id": "minecraft:armor_stand",
+                  "Silent": true,
+                  "Invulnerable": true,
+                  "Invisible": true,
+                  "Small": true,
+                  "Tags": [
+                    "rida.summon"
+                  ]
+                },
+                "max_stack_size": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
