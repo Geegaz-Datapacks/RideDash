@@ -18,7 +18,7 @@
                 "lore": [
                   {
                     "translate": "lore.rida.temporary",
-                    "fallback": "This item is temporary and will be replaced in a future update",
+                    "fallback": "Will be replaced in a future update",
                     "color": "dark_gray"
                   },
                   {

@@ -12,12 +12,20 @@
               "components": {
                 "item_model": "rida:ship_spawn_egg",
                 "item_name": {
-                  "translate": "rida.item.ship_spawn_egg",
+                  "translate": "item.rida.ship_spawn_egg",
                   "fallback": "Airbike"
                 },
+                "lore": [
+                  {
+                    "text": "Ride & Dash: Airbikes",
+                    "font": "rida:tooltip",
+                    "color": "white",
+                    "italic": false
+                  }
+                ],
                 "custom_data": {
                   "rida": {
-                    "id": "ship"
+                    "id": "ship_spawn_egg"
                   }
                 },
                 "entity_data": {
