@@ -1,1 +1,1 @@
-item modify entity @s weapon.mainhand rida:decrease_count
+item modify entity @s weapon.mainhand {function:"set_count",add:true,count:-1}

@@ -1,0 +1,66 @@
+{
+  "entity.airbike.start": {
+    "sounds": [
+      {
+        "name": "fire/ignite",
+        "pitch": 0.5
+      }
+    ],
+    "subtitle": "subtitles.entity.airbike.start"
+  },
+  "entity.airbike.move": {
+    "sounds": [
+      "block/blastfurnace/blastfurnace1",
+      "block/blastfurnace/blastfurnace2",
+      "block/blastfurnace/blastfurnace3",
+      "block/blastfurnace/blastfurnace4",
+      "block/blastfurnace/blastfurnace5"
+    ],
+    "subtitle": "subtitles.entity.airbike.move"
+  },
+  "entity.airbike.stop": {
+    "sounds": [
+      {
+        "name": "block/candle/extinguish1",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/candle/extinguish2",
+        "pitch": 0.5
+      },
+      {
+        "name": "block/candle/extinguish3",
+        "pitch": 0.5
+      }
+    ],
+    "subtitle": "subtitles.entity.airbike.stop"
+  },
+  "entity.airbike.refuel": {
+    "sounds": [
+      "mob/ghast/fireball4"
+    ],
+    "subtitle": "subtitles.entity.airbike.refuel"
+  },
+  "entity.airbike.fix": {
+    "sounds": [
+      "mob/irongolem/repair"
+    ],
+    "subtitle": "subtitles.entity.airbike.fix"
+  },
+  "entity.airbike.dash": {
+    "sounds": [
+      "mob/breeze/land1",
+      "mob/breeze/land2"
+    ],
+    "subtitle": "subtitles.entity.airbike.dash"
+  },
+  "entity.airbike.hurt": {
+    "sounds": [
+      "mob/blaze/hit1",
+      "mob/blaze/hit2",
+      "mob/blaze/hit3",
+      "mob/blaze/hit4"
+    ],
+    "subtitle": "subtitles.entity.airbike.hurt"
+  }
+}

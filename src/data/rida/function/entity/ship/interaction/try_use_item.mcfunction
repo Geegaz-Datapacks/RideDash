@@ -1,3 +1,4 @@
+data remove storage rida:temp interaction
 # Try to use the item on the vehicle
 execute if items entity 1af80582-f0f6-4ddd-b1c0-ccaf8beee947 container.0 #rida:dyes run return run function rida:entity/ship/interaction/item/use_dye
 execute if items entity 1af80582-f0f6-4ddd-b1c0-ccaf8beee947 container.0 #minecraft:banners run return run function rida:entity/ship/interaction/item/use_banner

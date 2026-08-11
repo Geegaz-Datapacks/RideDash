@@ -7,9 +7,10 @@
 - Can be dyed any of the 16 dye colors
 - Can be decorated with a banner, which can be removed with an axe
 
-**Move:** Hold forward / backward (hold both to hover)<br>
-**Boost:** Hold jump (1s duration)<br>
-**Dash:** Press left / right (1s cooldown)
+**Move:** Hold forward / backward <br>
+**Hover** Hold jump<br>
+**Boost:** Hold sprint (1s duration)<br>
+**Dash:** Press left / right (1s cooldown)<br>
 
 **Recipe** 
 

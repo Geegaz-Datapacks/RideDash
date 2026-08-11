@@ -1,12 +1,12 @@
 {
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
-	"parent": "rida:ship/thruster",
 	"texture_size": [64, 64],
+	"parent": "rida:ship/thruster",
 	"textures": {
 		"0": "rida:ship/racer_base",
 		"1": "rida:ship/racer_color",
-		"particle": "rida:ship/racer_particles"
+		"particle": "rida:ship/particles"
 	},
 	"elements": [
 		{

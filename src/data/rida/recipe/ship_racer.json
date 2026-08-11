@@ -15,11 +15,24 @@
   "result": {
     "id": "armor_stand",
     "components": {
-      "item_model": "rida:ship",
+      "item_model": "rida:icon",
       "item_name": {
-        "translate": "rida.item.ship",
+        "translate": "item.rida.ship",
         "fallback": "Airbike"
       },
+      "lore": [
+        {
+          "translate": "lore.rida.temporary",
+          "fallback": "This item is temporary and will be replaced in a future update",
+          "color": "dark_gray"
+        },
+        {
+          "text": "Ride & Dash: Airbikes",
+          "font": "rida:tooltip",
+          "color": "white",
+          "italic": false
+        }
+      ],
       "custom_data": {
         "rida": {
           "id": "ship"

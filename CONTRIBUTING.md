@@ -6,7 +6,6 @@ Smithed: https://smithed.net/packs/ride-dash
 
 Github: https://github.com/Geegaz-Datapacks/RideDash<br>
 Trello: https://trello.com/b/6W61QsGv<br>
-Google sheets: [Ride & Dash: Airbikes Translations](https://docs.google.com/spreadsheets/d/18Wkkh9j2_-htaP1tnrhu6eCG12DnjkYCFCKtofINQog/edit?usp=sharing)
 
 ## Requirements:
 - Python 3.14.x
@@ -23,5 +22,4 @@ Created with `py -m venv .venv` (from the VSCode Docs: [Python - Environments](h
 ## Resources
 - Cloudwolf's custom UI bars: https://www.youtube.com/watch?v=EL2X6ppZSCQ
 - Cloudwolf's vehicles: https://www.youtube.com/watch?v=8cNvXMpD40A
-- ErrorCraft's motionomicon: https://github.com/ErrorCraft/Motionomicon
 - SolToder's UUID generator: https://www.soltoder.com/mc-uuid-converter/

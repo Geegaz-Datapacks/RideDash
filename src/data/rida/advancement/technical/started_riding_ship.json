@@ -1,11 +1,13 @@
 {
   "criteria": {
-    "mount": {
+    "ride": {
       "trigger": "started_riding",
       "conditions": {
         "player": {
           "vehicle": {
-            "nbt": {"Tags": ["rida.ship.root"]}
+            "entity_tags": {
+              "any_of": ["rida.ship"]
+            }
           }
         }
       }

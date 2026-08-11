@@ -1,5 +1,8 @@
-# Will succeed if the axe has a custom max_damage component, otherwise we have to get the max_damage manually
-execute if function rida:entity/ship/interaction/item/get_item_damage run return fail
+execute store result score #rida.damage rida.var run data get entity @s item.components."minecraft:damage"
+
+# Will only succeed if the axe has a custom max_damage component
+execute store result score #rida.max_damage rida.var run data get entity @s item.components."minecraft:max_damage"
+execute if score #rida.max_damage rida.var matches 1.. run return fail
 
 execute if items entity @s container.0 wooden_axe run return run scoreboard players set #rida.max_damage rida.var 59
 execute if items entity @s container.0 stone_axe run return run scoreboard players set #rida.max_damage rida.var 131

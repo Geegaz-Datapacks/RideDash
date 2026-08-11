@@ -1,0 +1,12 @@
+Ride & Dash: Airbikes,en_us,fr_fr
+item.rida.ship,Airbike,Airbike
+item.rida.ship_spawn_egg,Airbike Spawn Egg,Oeuf d'apparition d'airbike
+lore.rida.temporary,Replaced in a future update,Remplacé dans une màj future
+message.rida.too_many_riders,Too many riders - try again later,Trop de conducteur·ices - réessayez plus tard
+subtitles.entity.airbike.start,Airbike starts,Airbike démarre
+subtitles.entity.airbike.move,Airbike flies,Airbike vole
+subtitles.entity.airbike.dash,Airbike dashes,Airbike se propulse
+subtitles.entity.airbike.stop,Airbike stops,Airbike s'arrête
+subtitles.entity.airbike.refuel,Airbike refuels,Airbike fait le plein
+subtitles.entity.airbike.fix,Airbike is fixed,Airbike est réparé
+subtitles.entity.airbike.hurt,Airbike is damaged,Airbike est endommagé

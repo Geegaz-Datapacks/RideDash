@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rida:item/icon",
+    "particle": "rida:item/icon"
+  }
+}

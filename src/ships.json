@@ -4,7 +4,6 @@
       "speed": 80,
       "health": 40,
       "fuel": 60
-    },
-    "default_color": "red"
+    }
   }
 }

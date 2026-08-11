@@ -6,14 +6,14 @@ version: dev
 data_pack:
   load:
     - src
-  min_format: 88
-  max_format: 94
+  min_format: 101
+  max_format: 107
   zipped: false
 resource_pack:
   load:
     - src
-  min_format: 69
-  max_format: 77
+  min_format: 84
+  max_format: 88
   zipped: false
 
 output: build
@@ -21,17 +21,14 @@ output: build
 require:
   - beet.contrib.extra_files
   - beet.contrib.unknown_files
-  - plugins.gsheets_translations
 pipeline:
-  - plugins.generate_fuel_bar
+  - plugins.generate_font_assets
   - plugins.generate_ship_assets
   - beet.contrib.babelbox
 meta:
-  gsheets_translations:
-    spreadsheet_id: 18Wkkh9j2_-htaP1tnrhu6eCG12DnjkYCFCKtofINQog
-    output: rida.csv
   babelbox:
-    load: .beet_cache/translations/rida.csv
+    load: translations.csv
+    namespace: rida
   ships_file: src/ships.json
   extra_files:
     data_pack:

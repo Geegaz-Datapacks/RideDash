@@ -13,14 +13,14 @@ tag @s add rida.alive
 data remove storage rida:temp display
 # Update scores (even without a rider)
 scoreboard players remove @s[scores={rida.dash=1..}] rida.dash 1
-scoreboard players remove @s[scores={rida.boost=1..},tag=!rida.boosting] rida.boost 1
+scoreboard players remove @s[tag=!rida.boosting,scores={rida.boost=1..}] rida.boost 1
 
 execute store result score @s rida.hurt run data get entity @s HurtTime
 execute if score @s rida.hurt matches 1.. run function rida:entity/ship/effects/hurt
 
-execute if entity @s[tag=rida.ridden,predicate=!rida:technical/has_rider] run function rida:entity/ship/player_stopped_riding
 execute if entity @s[tag=!rida.ridden,predicate=rida:technical/has_rider] run function rida:entity/ship/player_started_riding
-execute if entity @s[tag=rida.ridden] run function rida:entity/ship/tick_ridden
+execute if entity @s[tag=rida.ridden,predicate=!rida:technical/has_rider] run function rida:entity/ship/player_stopped_riding
+execute if entity @s[tag=rida.ridden,tag=!rida.locked] run function rida:entity/ship/tick_ridden
 
 execute if data storage rida:temp display run function rida:entity/ship/display/set_display
 
