@@ -35,22 +35,22 @@ def generate_atlas(ctx: Context, texture_paths: list):
   atlas = ctx.assets.atlases["minecraft:blocks"]
 
   # Split palette_colors using Pillow and remove it from the output pack
-  colors_image = ctx.assets.textures.pop("rida:palette/palette_colors").image
+  colors_image = ctx.assets.textures.pop("rida:palettes/ship_colors").image
   for color_index in range(len(COLORS)):
     color = COLORS[color_index]
     color_image = colors_image.crop((0, color_index, 4, color_index+1))
-    ctx.assets.textures[f"rida:palette/{color}"] = Texture(color_image)
+    ctx.assets.textures[f"rida:palettes/ship_{color}"] = Texture(color_image)
   
   # Create the paletted permutations based on the list of colors
   atlas_paletted = {
     "type": "paletted_permutations",
-    "palette_key": "rida:palette/palette_key",
+    "palette_key": "rida:ship_base",
     "permutations": {},
     "textures": []
   }
   # Add a permutation for every color
   for color in COLORS:
-    atlas_paletted["permutations"][color] = f"rida:palette/{color}"
+    atlas_paletted["permutations"][color] = f"rida:ship_{color}"
 
   # Add a reference to all textures that should be paletted
   for path in texture_paths:

@@ -13,7 +13,7 @@ resource_pack:
   load:
     - src
   min_format: 84
-  max_format: 88
+  max_format: 97
   zipped: false
 
 output: build
