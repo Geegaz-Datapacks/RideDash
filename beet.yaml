@@ -12,7 +12,7 @@ data_pack:
 resource_pack:
   load:
     - src
-  min_format: 84
+  min_format: 89
   max_format: 97
   zipped: false
 
