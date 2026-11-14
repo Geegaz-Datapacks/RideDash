@@ -6,8 +6,8 @@ version: dev
 data_pack:
   load:
     - src
-  min_format: 101
-  max_format: 107
+  min_format: 121
+  max_format: 121
   zipped: false
 resource_pack:
   load:
