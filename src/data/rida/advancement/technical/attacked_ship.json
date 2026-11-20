@@ -4,11 +4,15 @@
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "entity": {
-          "entity_type": "minecraft:interaction",
-          "entity_tags": {
-            "all_of": [
-              "rida.ship.interaction"
-            ]
+          "type": "entity_properties",
+          "entity": "this",
+          "predicate": {
+            "entity_type": "interaction",
+            "entity_tags": {
+              "all_of": [
+                "rida.ship.interaction"
+              ]
+            }
           }
         }
       }

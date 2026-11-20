@@ -1,1 +1,1 @@
-item modify entity @s weapon.mainhand {function:"set_count",add:true,count:-1}
+item modify entity @s weapon.mainhand {type:"set_count",add:true,count:-1}

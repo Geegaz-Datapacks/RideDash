@@ -4,9 +4,15 @@
       "trigger": "started_riding",
       "conditions": {
         "player": {
-          "vehicle": {
-            "entity_tags": {
-              "any_of": ["rida.ship"]
+          "type": "entity_properties",
+          "entity": "this",
+          "predicate": {
+            "vehicle": {
+              "entity_tags": {
+                "any_of": [
+                  "rida.ship"
+                ]
+              }
             }
           }
         }
